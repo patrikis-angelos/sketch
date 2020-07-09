@@ -1,0 +1,50 @@
+html{
+    background-color:grey;
+}
+
+main{
+    display:flex;
+    flex-direction: row;
+}
+
+#menu{
+    width:200px;
+    height:98vh;
+    background-color:rgb(172, 172, 172);
+}
+
+#menu input{
+    width:150px;
+}
+
+#container{
+    display:grid;
+    height:98vh;
+    width:100%;
+    grid-gap:0px;
+}
+
+#colors
+{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, 18px);
+    grid-template-rows: repeat(auto-fill, 18px);
+    grid-gap: 5px;
+    margin-top: 20px;
+    height:100px;
+}
+
+.color{
+    border:2px solid;
+    width:16px;
+    height:16px;
+}
+
+.block{
+    background-color:rgb(255, 255, 255);
+    border:1px solid;
+}
+
+.painted{
+    background-color: black;
+}
