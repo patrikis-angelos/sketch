@@ -13,6 +13,20 @@ console.log(colorBar);
 CreateGrid(gridWidth, gridHeight);
 InitializeColors();
 
+page.onmousedown = function()
+{
+    isMousePressed = true;
+}
+
+page.onmouseup = function()
+{
+    isMousePressed = false;
+}
+page.ondragstart = function()
+{
+    return false;
+}
+
 resetButton.onclick = function(){
     ClearGrid();
     if(inputBar[0].value>100)
@@ -31,20 +45,6 @@ resetButton.onclick = function(){
     CreateGrid(gridWidth, gridHeight);
 }
 
-page.onmousedown = function()
-{
-    isMousePressed = true;
-}
-
-page.onmouseup = function()
-{
-    isMousePressed = false;
-}
-page.ondragstart = function()
-{
-    return false;
-}
-
 function CreateGrid(width, height)
 {
     container.style.cssText = `grid-template-columns:repeat(${width}, 1fr);grid-template-rows:repeat(${height}, 1fr)`;
@@ -55,7 +55,7 @@ function CreateGrid(width, height)
         {
             const div = document.createElement("div");
             div.classList.add("block")
-            div.addEventListener("mouseenter", function(e){Paint(e)});
+            div.addEventListener("mouseover", function(e){Paint(e)});
             container.appendChild(div);
         }
     }
