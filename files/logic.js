@@ -15,6 +15,17 @@ InitializeColors();
 
 resetButton.onclick = function(){
     ClearGrid();
+    if(inputBar[0].value>100)
+    {
+        gridWidth = inputBar[0].value;
+        inputBar[0].value = 100;
+    }
+
+    if(inputBar[1].value > 100)
+    {
+        inputBar[1].value=100;
+    }
+
     gridWidth = inputBar[0].value;
     gridHeight = inputBar[1].value;
     CreateGrid(gridWidth, gridHeight);
